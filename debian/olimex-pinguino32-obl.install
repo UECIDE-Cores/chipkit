@@ -1,0 +1,6 @@
+debian/boards/olimex-pinguino32-obl/board.txt boards/Olimex/olimex-pinguino32
+debian/boards/olimex-pinguino32-obl/chipKIT-application-32MX440F256-pinguino.ld boards/Olimex/olimex-pinguino32
+debian/boards/olimex-pinguino32-obl/icons boards/Olimex/olimex-pinguino32
+debian/boards/olimex-pinguino32-obl/tools boards/Olimex/olimex-pinguino32
+tmp/pic32/variants/Olimex_PIC32_Pinguino/Board_Data.c boards/Olimex/olimex-pinguino32
+tmp/pic32/variants/Olimex_PIC32_Pinguino/Board_Defs.h boards/Olimex/olimex-pinguino32

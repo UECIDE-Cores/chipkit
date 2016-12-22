@@ -1,0 +1,3 @@
+debian/boards/chipkit-pro-mx7/board.txt boards/chipKIT/chipkit-pro-mx7
+tmp/pic32/variants/Cerebot_MX7cK/Board_Data.c boards/chipKIT/chipkit-pro-mx7
+tmp/pic32/variants/Cerebot_MX7cK/Board_Defs.h boards/chipKIT/chipkit-pro-mx7

@@ -1,0 +1,3 @@
+tmp/pic32/cores/pic32 cores/chipkit
+debian/core.txt cores/chipkit
+debian/tools cores/chipkit

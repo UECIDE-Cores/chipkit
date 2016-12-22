@@ -1,0 +1,3 @@
+debian/boards/pontech-quick240/board.txt boards/PONTECH/pontech-quick240
+tmp/pic32/variants/quicK240/Board_Data.c boards/PONTECH/pontech-quick240
+tmp/pic32/variants/quicK240/Board_Defs.h boards/PONTECH/pontech-quick240

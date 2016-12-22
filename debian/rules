@@ -1,0 +1,35 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+DEBVERS := $(shell dpkg-parsechangelog | sed -n -e 's/^Version: //p')
+VERSION := $(shell echo '$(DEBVERS)' | sed -e 's/^[[:digit:]]*://' -e 's/[~-].*//')
+
+JSON_URL=https://raw.githubusercontent.com/chipKIT32/chipKIT-core/master/package_chipkit_index.json
+CORE_URL=$(shell wget -O - -q $(JSON_URL) | grep 'url' | head -n 1 | cut -f4 -d'"')
+CORE_NAME=$(shell basename $(CORE_URL))
+
+%:
+	dh $@ 
+
+override_dh_builddeb:
+	dh_builddeb -- -Zgzip
+
+override_dh_auto_build:
+	wget -c $(CORE_URL)
+	mkdir -p tmp
+	unzip -d tmp $(CORE_NAME)
+#	mv tmp/arduino-$(VERSION)/hardware/arduino/avr .
+#	mv tmp/arduino-$(VERSION)/libraries .
+#	mv tmp/arduino-$(VERSION)/examples .
+#	rm -rf tmp
+
+override_dh_auto_clean:
+	rm -rf avr tmp libraries examples

@@ -1,0 +1,3 @@
+debian/boards/chipkit-pi/board.txt boards/chipKIT/chipkit-pi
+tmp/pic32/variants/ChipKIT_Pi/Board_Data.c boards/chipKIT/chipkit-pi
+tmp/pic32/variants/ChipKIT_Pi/Board_Defs.h boards/chipKIT/chipkit-pi
