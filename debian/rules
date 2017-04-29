@@ -16,6 +16,8 @@ JSON_URL=https://raw.githubusercontent.com/chipKIT32/chipKIT-core/master/package
 CORE_URL=$(shell wget -O - -q $(JSON_URL) | grep 'url' | head -n 1 | cut -f4 -d'"')
 CORE_NAME=$(shell basename $(CORE_URL))
 
+DOWNLOADS = ../../downloads
+
 %:
 	dh $@ 
 
@@ -23,9 +25,9 @@ override_dh_builddeb:
 	dh_builddeb -- -Zgzip
 
 override_dh_auto_build:
-	wget -c $(CORE_URL)
+	wget -c -O $(DOWNLOADS)/$(CORE_NAME) $(CORE_URL)
 	mkdir -p tmp
-	unzip -d tmp $(CORE_NAME)
+	unzip -d tmp $(DOWNLOADS)/$(CORE_NAME)
 #	mv tmp/arduino-$(VERSION)/hardware/arduino/avr .
 #	mv tmp/arduino-$(VERSION)/libraries .
 #	mv tmp/arduino-$(VERSION)/examples .

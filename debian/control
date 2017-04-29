@@ -246,7 +246,7 @@ Architecture: all
 KBSC-Group: OpenBCI
 Depends: chipkit
 Homepage: http://openbci.com/
-Description OpenBCI 32
+Description: OpenBCI 32
 
 Package: chipkit-dp32
 Section: boards
@@ -563,19 +563,19 @@ Homepage: https://code.google.com/p/cui32/
 Description: Create USB Interface STEM
  STEM version of the Create USB Interface
 
-Package: pontech-quick240
-Section: boards
-Architecture: all
-XBSC-Group: PONTECH
-Depends: chipkit
-Homepage: http://quick240.com/quicki/
-Description: PONTECH quicK240
- Quick™ (Quick Universal Industrial Control Kard) is based on chipKIT(tm)
- open source platform. The Quick240 is designed for industrial automation
- systems where traditionally a ladder logic PLC might have been used.
- Since the Quick240 is an open platform for industrial automation it
- effectively extends the traditional life of a similarly proprietary.
- This is achieved in several ways.
+#Package: pontech-quick240
+#Section: boards
+#Architecture: all
+#XBSC-Group: PONTECH
+#Depends: chipkit
+#Homepage: http://quick240.com/quicki/
+#Description: PONTECH quicK240
+# Quick™ (Quick Universal Industrial Control Kard) is based on chipKIT(tm)
+# open source platform. The Quick240 is designed for industrial automation
+# systems where traditionally a ladder logic PLC might have been used.
+# Since the Quick240 is an open platform for industrial automation it
+# effectively extends the traditional life of a similarly proprietary.
+# This is achieved in several ways.
 
 Package: pontech-uav100
 Section: boards
