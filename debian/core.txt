@@ -2,7 +2,7 @@ name=chipkit
 description=chipKIT
 compiler=pic32-tools
 
-core.flags=-DF_CPU=${build.f_cpu}::-DARDUINO=${core.version}::-D${board}::-DMPIDEVER=${core.revision}::-DMPIDE=${core.version}::-DOPT_BOARD_INTERNAL::-DOPT_SYSTEM_INTERNAL::-DIDE=UECIDE
+core.flags=-DF_CPU=${build.f_cpu}::-DARDUINO=${core.version}::-D${board}::-DMPIDEVER=${core.revision}::-DMPIDE=${core.version}::-DIDE=UECIDE
 
 core.library.api=pic32
 
