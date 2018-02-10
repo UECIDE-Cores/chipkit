@@ -1,3 +1,0 @@
-debian/boards/chipkit-wf32/board.txt boards/chipKIT/chipkit-wf32
-tmp/pic32/variants/WF32/Board_Data.c boards/chipKIT/chipkit-wf32
-tmp/pic32/variants/WF32/Board_Defs.h boards/chipKIT/chipkit-wf32

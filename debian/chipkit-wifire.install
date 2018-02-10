@@ -1,7 +1,0 @@
-debian/boards/chipkit-wifire/board.txt boards/chipKIT/chipkit-wifire
-tmp/pic32/variants/WiFire/Board_Data.c boards/chipKIT/chipkit-wifire
-tmp/pic32/variants/WiFire/Board_Defs.h boards/chipKIT/chipkit-wifire
-tmp/pic32/variants/WiFire/ECADC.c boards/chipKIT/chipkit-wifire
-tmp/pic32/variants/WiFire/EFADC.c boards/chipKIT/chipkit-wifire
-tmp/pic32/variants/WiFire/EFADC.h boards/chipKIT/chipkit-wifire
-tmp/pic32/variants/WiFire/MZ-application-32MZ2048ECX.ld boards/chipKIT/chipkit-wifire

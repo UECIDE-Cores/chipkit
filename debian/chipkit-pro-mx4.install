@@ -1,3 +1,0 @@
-debian/boards/chipkit-pro-mx4/board.txt boards/chipKIT/chipkit-pro-mx4
-tmp/pic32/variants/Cerebot_MX4cK/Board_Data.c boards/chipKIT/chipkit-pro-mx4
-tmp/pic32/variants/Cerebot_MX4cK/Board_Defs.h boards/chipKIT/chipkit-pro-mx4

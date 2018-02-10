@@ -1,3 +1,0 @@
-debian/boards/chipkit-dp32/board.txt boards/chipKIT/chipkit-dp32
-tmp/pic32/variants/DP32/Board_Data.c boards/chipKIT/chipkit-dp32
-tmp/pic32/variants/DP32/Board_Defs.h boards/chipKIT/chipkit-dp32

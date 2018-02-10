@@ -1,3 +1,0 @@
-debian/boards/openbci-openbci32/board.txt boards/OpenBCI/openbci-openbci32
-tmp/pic32/variants/openbci/Board_Data.c boards/OpenBCI/openbci-openbci32
-tmp/pic32/variants/openbci/Board_Defs.h boards/OpenBCI/openbci-openbci32

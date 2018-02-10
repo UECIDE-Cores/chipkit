@@ -1,4 +1,0 @@
-debian/boards/olimex-pinguino32/board.txt boards/Olimex/olimex-pinguino32
-debian/boards/olimex-pinguino32/icons boards/Olimex/olimex-pinguino32
-tmp/pic32/variants/Olimex_PIC32_Pinguino/Board_Data.c boards/Olimex/olimex-pinguino32
-tmp/pic32/variants/Olimex_PIC32_Pinguino/Board_Defs.h boards/Olimex/olimex-pinguino32

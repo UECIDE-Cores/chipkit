@@ -4,6 +4,11 @@ use strict;
 
 use Data::Dumper;
 
+my $usb;
+
+$usb->{'chipkit-lenny'}->{vid} = '0403';
+$usb->{'chipkit-lenny'}->{pid} = 'a662';
+
 my $source = shift || die "Usage: mkboard <source tag> <new board code>";
 my $newcode = shift || die "Usage: mkboard <source tag> <new board code>";
 
@@ -64,6 +69,11 @@ if ($data->{'usb.enabled'} eq "true") {
     $out->{'options.usb.b_cdcacm_km.flags'} = "-D__USB_ENABLED__::-D__USB_CDCACM__::-D__SERIAL_IS_USB__";
     $out->{'options.usb.z_custom.name'} = "Custom";
     $out->{'options.usb.z_custom.flags'} = "-D__USB_ENABLED__::-D__USB_CDCACM__::-D__SERIAL_IS_USB__";
+}
+
+if ($usb->{$newcode}) {
+    $out->{'program.vid'} = $usb->{$newcode}->{'vid'};
+    $out->{'program.pid'} = $usb->{$newcode}->{'pid'};
 }
 
 my $group = $data->{'group'};

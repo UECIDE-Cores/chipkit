@@ -1,3 +1,0 @@
-debian/boards/fubarino-sd/board.txt boards/Fubarino/fubarino-sd
-tmp/pic32/variants/Fubarino_SD/Board_Data.c boards/Fubarino/fubarino-sd
-tmp/pic32/variants/Fubarino_SD/Board_Defs.h boards/Fubarino/fubarino-sd

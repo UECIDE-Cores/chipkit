@@ -1,3 +1,0 @@
-debian/boards/chipkit-max32/board.txt boards/chipKIT/chipkit-max32
-tmp/pic32/variants/Max32/Board_Data.c boards/chipKIT/chipkit-max32
-tmp/pic32/variants/Max32/Board_Defs.h boards/chipKIT/chipkit-max32

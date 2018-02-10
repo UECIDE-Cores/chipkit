@@ -1,3 +1,0 @@
-debian/boards/chipkit-uno32/board.txt boards/chipKIT/chipkit-uno32
-tmp/pic32/variants/Uno32/Board_Data.c boards/chipKIT/chipkit-uno32
-tmp/pic32/variants/Uno32/Board_Defs.h boards/chipKIT/chipkit-uno32

@@ -1,3 +1,0 @@
-debian/boards/overtone-cui32stem/board.txt boards/OvertoneLabs/overtone-cui32stem
-tmp/pic32/variants/CUI32stem/Board_Data.c boards/OvertoneLabs/overtone-cui32stem
-tmp/pic32/variants/CUI32stem/Board_Defs.h boards/OvertoneLabs/overtone-cui32stem
