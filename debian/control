@@ -3,7 +3,7 @@ Section: cores
 XBSC-Family: pic32
 Priority: extra
 Maintainer: Matt Jenkins <matt@majenko.co.uk>
-Build-Depends: debhelper (>= 8.0.0)
+Build-Depends: debhelper (>= 9.0.0)
 Standards-Version: 3.9.4
 Homepage: http://chipkit.net
 
@@ -230,6 +230,7 @@ Package: chipkit-cmod
 Section: boards
 Architecture: all
 XBSC-Group: chipKIT
+XC-Source: cmod
 Depends: chipkit
 Homepage: http://www.digilentinc.com/Products/Detail.cfm?Prod=CHIPKIT-CMOD
 Description: chipKIT Cmod
@@ -243,15 +244,74 @@ Description: chipKIT Cmod
 Package: openbci-openbci32
 Section: boards
 Architecture: all
-KBSC-Group: OpenBCI
+XBSC-Group: OpenBCI
+XC-Source: openbci
 Depends: chipkit
 Homepage: http://openbci.com/
 Description: OpenBCI 32
+
+Package: chipkit-lenny
+Section: boards
+Architecture: all
+XBSC-Group: chipKIT
+XC-Source: lenny
+Depends: chipkit
+Homepage: https://majenko.co.uk/lenny
+Description: chipKIT Lenny
+
+Package: makerology-dsmini
+Section: boards
+Architecture: all
+XBSC-Group: Makerology
+XC-Source: dsmini
+Depends: chipkit
+Description: DataStation Mini
+
+Package: mikroe-clicker2
+Section: boards
+Architecture: all
+XBSC-Group: MikroElektronika
+XC-Source: clicker2
+Depends: chipkit
+Description: MikroElektronika Clicker 2
+
+Package: mikroe-flipnclickmz
+Section: boards
+Architecture: all
+XBSC-Group: MikroElektronika
+XC-Source: flipnclickmz
+Depends: chipkit
+Description: MikroElektronika Flip N Click MZ
+
+Package: digilent-openscope
+Section: boards
+Architecture: all
+XBSC-Group: Digilent
+XC-Source: OpenScope
+Depends: chipkit
+Description: Digilent Openscope
+
+Package: 4d-picadillo-35t
+Section: boards
+Architecture: all
+XBSC-Group: 4D Systems
+XC-Source: picadillo_35t
+Depends: chipkit
+Description: 4D Picadillo-35T
+
+Package: pontech-nofire
+Section: boards
+Architecture: all
+XBSC-Group: PONTECH
+XC-Source: pontech_NoFire
+Depends: chipkit
+Description: PONTECH NoFire
 
 Package: chipkit-dp32
 Section: boards
 Architecture: all
 XBSC-Group: chipKIT
+XC-Source: chipkit_DP32
 Depends: chipkit
 Homepage: http://www.digilentinc.com/Products/Detail.cfm?Prod=CHIPKIT-DP32
 Description: chipKIT DP32
@@ -266,6 +326,7 @@ Package: chipkit-max32
 Section: boards
 Architecture: all
 XBSC-Group: chipKIT
+XC-Source: mega_pic32
 Depends: chipkit
 Homepage: http://www.digilentinc.com/Products/Detail.cfm?Prod=CHIPKIT-MAX32
 Description: chipKIT Max32
@@ -280,6 +341,7 @@ Package: chipkit-mx3
 Section: boards
 Architecture: all
 XBSC-Group: chipKIT
+XC-Source: chipkit_mx3
 Depends: chipkit
 Homepage: https://www.digilentinc.com/Products/Detail.cfm?NavPath=2,892,1217&Prod=CHIPKIT-MX3
 Description: chipKIT MX3
@@ -295,6 +357,7 @@ Package: chipkit-pi
 Section: boards
 Architecture: all
 XBSC-Group: chipKIT
+XC-Source: chipkit_Pi
 Depends: chipkit
 Homepage: http://www.element14.com/community/community/raspberry-pi/raspberry-pi-accessories/chipkit_pi
 Description: chipKIT Pi
@@ -310,6 +373,7 @@ Package: chipkit-pro-mx4
 Section: boards
 Architecture: all
 XBSC-Group: chipKIT
+XC-Source: chipkit_pro_mx4
 Depends: chipkit
 Homepage: https://www.digilentinc.com/Products/Detail.cfm?NavPath=2,892,1218&Prod=CHIPKIT-PRO-MX4
 Description: chipKIT Pro MX4
@@ -326,6 +390,7 @@ Package: chipkit-pro-mx7
 Section: boards
 Architecture: all
 XBSC-Group: chipKIT
+XC-Source: chipkit_pro_mx7
 Depends: chipkit
 Homepage: https://www.digilentinc.com/Products/Detail.cfm?NavPath=2,892,1218&Prod=CHIPKIT-PRO-MX7
 Description: chipKIT Pro MX7
@@ -342,6 +407,7 @@ Package: chipkit-uc32
 Section: boards
 Architecture: all
 XBSC-Group: chipKIT
+XC-Source: chipkit_uc32
 Depends: chipkit
 Homepage: http://www.digilentinc.com/Products/Detail.cfm?Prod=CHIPKIT-UC32
 Description: chipKIT uC32
@@ -353,6 +419,7 @@ Package: chipkit-uno32
 Section: boards
 Architecture: all
 XBSC-Group: chipKIT
+XC-Source: uno_pic32
 Depends: chipkit
 Homepage: http://www.digilentinc.com/Products/Detail.cfm?Prod=CHIPKIT-UNO32
 Description: chipKIT Uno32
@@ -367,6 +434,7 @@ Package: chipkit-wf32
 Section: boards
 Architecture: all
 XBSC-Group: chipKIT
+XC-Source: chipkit_WF32
 Depends: chipkit
 Homepage: http://www.digilentinc.com/Products/Detail.cfm?Prod=CHIPKIT-WF32
 Description: chipKIT WF32
@@ -410,6 +478,7 @@ Package: chipkit-wifire
 Section: boards
 Architecture: all
 XBSC-Group: chipKIT
+XC-Source: chipkit_WiFire
 Depends: chipkit
 Homepage: http://www.digilentinc.com/Products/Detail.cfm?Prod=CHIPKIT-WIFIRE
 Description: chipKIT Wi-FIRE
@@ -420,6 +489,7 @@ Package: fubarino-mini
 Section: boards
 Architecture: all
 XBSC-Group: Fubar Labs
+XC-Source: fubarino_mini
 Depends: chipkit
 Homepage: http://fubarino.org/sd/index.html
 Description: Fubarino Mini
@@ -434,6 +504,7 @@ Package: fubarino-sd
 Section: boards
 Architecture: all
 XBSC-Group: Fubar Labs
+XC-Source: fubarino_sd
 Depends: chipkit
 Homepage: http://fubarino.org/sd/index.html
 Description: Fubarino SD
@@ -444,91 +515,11 @@ Description: Fubarino SD
  typical Arduino or clone. And it includes a microSD card slot for
  easy sketch access to huge file storage.
 
-Package: mchp-explorer16
-Section: boards
-Architecture: all
-XBSC-Group: Microchip
-Depends: chipkit
-Homepage: http://www.microchip.com/Developmenttools/ProductDetails.aspx?PartNO=DM240001
-Description: Explorer 16 Development Board
- The Explorer 16 Development Board is a low-cost modular development
- system for Microchip’s 16-bit and 32-bit microcontrollers. It
- supports devices from the PIC24, dsPIC and PIC32 families. A variety
- of families are supported with processor Plug-In Modules (PIMs) for
- easy device swapping.  The board includes a PICtail Plus daughter
- card connector for expansion boards including USB, CAN, Ethernet,
- wireless, graphics and many more.  Coupled with the MPLAB ICD 3 In
- Circuit Debugger or MPLAB REAL ICE, real-time emulation and debug
- facilities speed evaluation and prototyping of application circuitry.
-
-Package: mchp-starter
-Section: boards
-Architecture: all
-XBSC-Group: Microchip
-Depends: chipkit
-Homepage: http://www.microchip.com/Developmenttools/ProductDetails.aspx?PartNO=DM320001
-Description: PIC32 Starter Kit
- The PIC32 Starter Kit provides the easiest and lowest cost method to
- experience the PIC32 microcontroller for the first time. From the over
- 35 source code examples to the getting started project, users quickly
- learn Microchip's 32-bit family of microcontrollers and development
- tools. The kit includes everything needed to write, program, debug,
- and execute code on a high performance PIC32 microcontroller.
-
-Package: mchp-starter-eth
-Section: boards
-Architecture: all
-XBSC-Group: Microchip
-Depends: chipkit
-Homepage: http://www.microchip.com/DevelopmentTools/ProductDetails.aspx?PartNO=DM320004
-Description: PIC32 Ethernet Starter Kit
- The PIC32 Ethernet Starter Kit provides the easiest and lowest cost
- method to experience 10/100 Ethernet development with PIC32. Combined
- with Microchip's free TCP/IP software, your project will be running in
- no time. The PIC32 has an available CAN 2.0b peripheral and USB
- host/device/OTG.
-
-Package: mchp-starter-usb
-Section: boards
-Architecture: all
-XBSC-Group: Microchip
-Depends: chipkit
-Homepage: http://www.microchip.com/Developmenttools/ProductDetails.aspx?PartNO=DM320003-2
-Description: PIC32 USB Starter Kit II
- The PIC32 USB Starter Kit II provides the easiest and lowest cost method
- to experience the USB and CAN functionality of the PIC32 microcontrollers.
- Users can develop CAN applications using PIC32 expansion board. The board
- contains everything need to develop USB embedded host/device/OTG applications
- by combining this board with Microchip's free USB software.
-
-Package: mikroe-mikromedia
-Section: boards
-Architecture: all
-XBSC-Group: MikroElektronika
-Depends: chipkit
-Homepage: http://www.mikroe.com/mikromedia/pic32/
-Description: MikroMedia for PIC32
- This board provides a compact high-quality multimedia development
- platform for PIC32MX460F512L device. It has numerous on-board modules,
- that allow you to write multimedia applications. This board can be
- used for both development or as a final product.
-
-Package: mikroe-multimedia
-Section: boards
-Architecture: all
-XBSC-Group: MikroElektronika
-Depends: chipkit
-Homepage: http://www.mikroe.com/multimedia/pic32mx7/
-Description: MultiMedia for PIC32MX7
- This board provides a complete, high-quality multimedia development
- platform for PIC32MX7 devices. It has numerous on-board modules,
- that allow you to write multimedia applications of high complexity.
- This board can be used for both development or as a final product.
-
 Package: olimex-pinguino32
 Section: boards
 Architecture: all
 XBSC-Group: Olimex
+XC-Source: Olimex_Pinguino32
 Depends: chipkit
 Homepage: https://www.olimex.com/Products/Duino/PIC32/PIC32-PINGUINO/open-source-hardware
 Description: PIC32 Pinguino
@@ -539,6 +530,7 @@ Package: olimex-pinguino32-obl
 Section: boards
 Architecture: all
 XBSC-Group: Olimex
+XC-Source: Olimex_Pinguino32
 Depends: chipKIT
 Homepage: https://www.olimex.com/Products/Duino/PIC32/PIC32-PINGUINO/open-source-hardware
 Description: PIC32 Pinguino (Olimex Bootloader)
@@ -549,6 +541,7 @@ Package: overtone-cui32
 Section: boards
 Architecture: all
 XBSC-Group: Overtone Labs
+XC-Source: cui32
 Depends: chipkit
 Homepage: https://code.google.com/p/cui32/
 Description: Create USB Interface
@@ -558,29 +551,32 @@ Package: overtone-cui32stem
 Section: boards
 Architecture: all
 XBSC-Group: Overtone Labs
+XC-Source: CUI32stem
 Depends: chipkit
 Homepage: https://code.google.com/p/cui32/
 Description: Create USB Interface STEM
  STEM version of the Create USB Interface
 
-#Package: pontech-quick240
-#Section: boards
-#Architecture: all
-#XBSC-Group: PONTECH
-#Depends: chipkit
-#Homepage: http://quick240.com/quicki/
-#Description: PONTECH quicK240
-# Quick™ (Quick Universal Industrial Control Kard) is based on chipKIT(tm)
-# open source platform. The Quick240 is designed for industrial automation
-# systems where traditionally a ladder logic PLC might have been used.
-# Since the Quick240 is an open platform for industrial automation it
-# effectively extends the traditional life of a similarly proprietary.
-# This is achieved in several ways.
+Package: pontech-quick240
+Section: boards
+Architecture: all
+XBSC-Group: PONTECH
+XC-Source: quick240_usb_pic32
+Depends: chipkit
+Homepage: http://quick240.com/quicki/
+Description: PONTECH quicK240
+ Quick™ (Quick Universal Industrial Control Kard) is based on chipKIT(tm)
+ open source platform. The Quick240 is designed for industrial automation
+ systems where traditionally a ladder logic PLC might have been used.
+ Since the Quick240 is an open platform for industrial automation it
+ effectively extends the traditional life of a similarly proprietary.
+ This is achieved in several ways.
 
 Package: pontech-uav100
 Section: boards
 Architecture: all
 XBSC-Group: PONTECH
+XC-Source: usbono_pic32
 Depends: chipkit
 Homepage: http://www.pontech.com/details/138
 Description: PONTECH UAV100
@@ -590,6 +586,7 @@ Package: schmalzhaus-ubw32-460
 Section: boards
 Architecture: all
 XBSC-Group: Schmalzhaus
+XC-Source: ubw32_mx460
 Depends: chipkit
 Homepage: http://www.schmalzhaus.com/UBW32/
 Description: USB Bit Whacker MX460
@@ -609,6 +606,7 @@ Package: schmalzhaus-ubw32-795
 Section: boards
 Architecture: all
 XBSC-Group: Schmalzhaus
+XC-Source: ubw32_mx795
 Depends: chipkit
 Homepage: http://www.schmalzhaus.com/UBW32/
 Description: USB Bit Whacker MX795
