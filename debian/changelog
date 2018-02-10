@@ -1,3 +1,9 @@
+chipkit (2.0.1) uecide; urgency=low
+
+  * Include fix to USB stack
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 20 Jul 2017 11:27:00 +0100
+
 chipkit (2.0.0) uecide; urgency=low
 
   * New USB stack
