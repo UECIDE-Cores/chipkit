@@ -1,5 +1,30 @@
+chipkit (2.0.0) uecide; urgency=low
+
+  * New USB stack
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 20 Jul 2017 11:27:00 +0100
+
+chipkit (1.4.3-1) uecide; urgency=low
+
+  * Removed redundant defines
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 20 Jul 2017 11:27:00 +0100
+
+chipkit (1.4.3) uecide; urgency=low
+
+  * Now based on chipKIT-core download bundle 
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 20 Jul 2017 11:27:00 +0100
+
+chipkit (1.4.2) uecide; urgency=low
+
+  * Now based on chipKIT-core download bundle 
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 20 Jul 2017 11:27:00 +0100
+
 chipkit (1.4.1) uecide; urgency=low
 
   * Now based on chipKIT-core download bundle 
 
  -- Matt Jenkins <matt@majenko.co.uk>  Mon, 26 Sep 2016 10:38:00 +0100
+

@@ -21,11 +21,18 @@ DOWNLOADS = ../../downloads
 %:
 	dh $@ 
 
+clean:
+	rm -rf tmp
+
 override_dh_builddeb:
 	dh_builddeb -- -Zgzip
 
+override_dh_prep:
+	debian/getboards
+
 override_dh_auto_build:
 	wget -c -O $(DOWNLOADS)/$(CORE_NAME) $(CORE_URL)
+	rm -rf tmp
 	mkdir -p tmp
 	unzip -d tmp $(DOWNLOADS)/$(CORE_NAME)
 #	mv tmp/arduino-$(VERSION)/hardware/arduino/avr .
@@ -33,5 +40,3 @@ override_dh_auto_build:
 #	mv tmp/arduino-$(VERSION)/examples .
 #	rm -rf tmp
 
-override_dh_auto_clean:
-	rm -rf avr tmp libraries examples

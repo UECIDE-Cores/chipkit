@@ -1,0 +1,33 @@
+#!/usr/bin/perl
+
+use strict;
+use Data::Dumper;
+
+my $boards;
+my $board = "";
+my $pkg = "";
+
+open(C, "<debian/control");
+
+while (my $l = <C>) {
+    chomp($l);
+    if ($l =~ /Package:\s+(.*)/) {
+        $pkg = $1;
+    }
+    if ($l =~ /Section:\s+boards/) {
+        $board = $pkg;
+    }
+    if ($l =~ /XC-Source:\s+(.*)/) {
+        $boards->{$board} = $1;
+    }
+}
+close(C);
+
+system("rm -rf debian/boards");
+mkdir("debian/boards");
+
+foreach my $b (keys %{$boards}) {
+    print("debian/mkboard " . $boards->{$b} . " $b\n");
+    system("debian/mkboard " . $boards->{$b} . " $b");
+}
+

@@ -1,0 +1,105 @@
+#!/usr/bin/perl
+
+use strict;
+
+use Data::Dumper;
+
+my $source = shift || die "Usage: mkboard <source tag> <new board code>";
+my $newcode = shift || die "Usage: mkboard <source tag> <new board code>";
+
+my $data;
+
+open(IN, "< tmp/pic32/boards.txt") || die("Unable to find boards.txt file");
+while (my $l = <IN>) {
+    chomp($l);
+    $l =~ s/^\s+|\s+$//g;
+    if (substr($l, 0, 1) eq "#") {
+        next;
+    }
+    my @parts = split(/=/, $l);
+    my @bits = split(/\./, $parts[0]);
+    my $sec = shift(@bits);
+    my $key = join(".", @bits);
+    if ($sec eq $source) {
+        $data->{$key} = $parts[1];
+    }
+}
+close(IN);
+
+my @ldbits = split(/\./, $data->{ldscript});
+$data->{ldscript} = $ldbits[0];
+
+my $out;
+
+$data->{'build.extra_flags'} =~ s/\s+/::/g;
+$data->{'ccflags'} =~ s/\s+/::/g;
+
+$out->{'name'} = $newcode;
+$out->{'description'} = $data->{'name'};
+$out->{'group'} = $data->{'group'};
+$out->{'board'} = $data->{'build.board'};
+$out->{'board.flags'} = $data->{'build.extra_flags'};
+
+$out->{'ccflags'} = $data->{'ccflags'};
+$out->{'ldscript'} = $data->{'ldscript'} . '${upload.${prefs:board.${prefs:board}.programmer}.ldsuffix}.ld';
+$out->{'ldcommon'} = $data->{'ldcommon'};
+
+$out->{'upload.protocol'} = $data->{'upload.protocol'};
+$out->{'upload.speed'} = $data->{'upload.speed'};
+$out->{'build.mcu'} = $data->{'build.mcu'};
+$out->{'build.f_cpu'} = $data->{'build.f_cpu'};
+$out->{'memory.sram'} = $data->{'upload.maximum_data_size'};
+$out->{'memory.flash'} = $data->{'upload.maximum_size'};
+
+$out->{'core'} = 'chipkit';
+$out->{'family'} = 'pic32';
+
+if ($data->{'usb.enabled'} eq "true") {
+
+    $out->{'options.usb.name'} = "USB";
+    $out->{'options.usb.default'} = $data->{'usb.default'};
+    $out->{'options.usb.a_cdcacm.name'} = "Serial";
+    $out->{'options.usb.a_cdcacm.flags'} = "-D__USB_ENABLED__::-D__USB_CDCACM__::-D__SERIAL_IS_USB__";
+    $out->{'options.usb.b_cdcacm_km.name'} = "Serial, Keyboard & Mouse";
+    $out->{'options.usb.b_cdcacm_km.flags'} = "-D__USB_ENABLED__::-D__USB_CDCACM__::-D__SERIAL_IS_USB__";
+    $out->{'options.usb.z_custom.name'} = "Custom";
+    $out->{'options.usb.z_custom.flags'} = "-D__USB_ENABLED__::-D__USB_CDCACM__::-D__SERIAL_IS_USB__";
+}
+
+my $group = $data->{'group'};
+$group =~ s/\s+/_/g;
+
+
+mkdir("debian/boards/$group");
+mkdir("debian/boards/$group/$newcode");
+open(OUT, ">debian/boards/$group/$newcode/board.txt");
+print OUT "# This file is auto generated. Do not edit.\n";
+print OUT "\n";
+
+foreach my $k (sort keys %$out) {
+    my $d = $out->{$k};
+    if (!$d) {
+        next;
+    }
+    print OUT "$k=$d\n";
+}
+
+close(OUT);
+
+open(INS, ">debian/$newcode.install");
+print INS "debian/boards/$group/$newcode/board.txt boards/$group/$newcode\n";
+
+opendir(DIR, "tmp/pic32/variants/" . $data->{'build.variant'});
+while (my $file = readdir(DIR)) {
+    if (substr($file, 0, 1) eq ".") {
+        next;
+    }
+    if ($file eq "board.txt") {
+        next;
+    }
+    print INS "tmp/pic32/variants/" . $data->{'build.variant'} . "/$file boards/$group/$newcode\n";
+    
+}
+closedir(DIR);
+
+close(INS);
