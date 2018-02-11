@@ -13,8 +13,13 @@ DEBVERS := $(shell dpkg-parsechangelog | sed -n -e 's/^Version: //p')
 VERSION := $(shell echo '$(DEBVERS)' | sed -e 's/^[[:digit:]]*://' -e 's/[~-].*//')
 
 JSON_URL=https://raw.githubusercontent.com/chipKIT32/chipKIT-core/master/package_chipkit_index.json
-CORE_URL=$(shell wget -O - -q $(JSON_URL) | grep 'url' | head -n 1 | cut -f4 -d'"')
-CORE_NAME=$(shell basename $(CORE_URL))
+#CORE_URL=$(shell wget -O - -q $(JSON_URL) | grep 'url' | head -n 1 | cut -f4 -d'"')
+#CORE_NAME=$(shell basename $(CORE_URL))
+
+#FETCH_JSON=$(shell rm -f package_chipkit_index.json || wget ${JSON_URL})
+CORE_URL=$(shell ../../tools/parseJson -i package_chipkit_index.json -P chipKIT -v $(VERSION) -p chipKIT -k url)
+CORE_NAME=$(shell ../../tools/parseJson -i package_chipkit_index.json -P chipKIT -v $(VERSION) -p chipKIT -k archiveFileName)
+
 
 DOWNLOADS = ../../downloads
 
@@ -29,6 +34,8 @@ override_dh_builddeb:
 	dh_builddeb -- -Zgzip
 
 override_dh_auto_build:
+	rm -f package_chipkit_index.json
+	wget ${JSON_URL}
 	wget -c -O $(DOWNLOADS)/$(CORE_NAME) $(CORE_URL)
 	rm -rf tmp
 	mkdir -p tmp
