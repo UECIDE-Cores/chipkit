@@ -1,6 +1,18 @@
+chipkit (2.0.1p1) uecide; urgency=low
+
+  * Force purge when changing USB settings
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 20 Jul 2017 11:27:00 +0100
+
 chipkit (2.0.1) uecide; urgency=low
 
   * Include fix to USB stack
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 20 Jul 2017 11:27:00 +0100
+
+chipkit (2.0.0p1) uecide; urgency=low
+
+  * Include fix to board USB settings
 
  -- Matt Jenkins <matt@majenko.co.uk>  Thu, 20 Jul 2017 11:27:00 +0100
 

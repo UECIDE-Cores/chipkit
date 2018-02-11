@@ -69,6 +69,7 @@ if ($data->{'usb.enabled'} eq "true") {
     $out->{'options.usb.b_cdcacm_km.flags'} = "-D__USB_ENABLED__::-D__USB_CDCACM_KM__::-D__SERIAL_IS_USB__";
     $out->{'options.usb.z_custom.name'} = "Custom";
     $out->{'options.usb.z_custom.flags'} = "";
+    $out->{'options.usb.purge'} = "true";
 }
 
 if ($usb->{$newcode}) {
