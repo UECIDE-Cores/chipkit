@@ -1,3 +1,15 @@
+chipkit (2.0.2) uecide; urgency=low
+
+  * 2.0.2 released
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 20 Jul 2017 11:27:00 +0100
+
+chipkit (2.0.1p2) uecide; urgency=low
+
+  * Look for missing variants in packaging script
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 20 Jul 2017 11:27:00 +0100
+
 chipkit (2.0.1p1) uecide; urgency=low
 
   * Force purge when changing USB settings

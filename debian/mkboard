@@ -59,6 +59,16 @@ $out->{'memory.flash'} = $data->{'upload.maximum_size'};
 $out->{'core'} = 'chipkit';
 $out->{'family'} = 'pic32';
 
+if (!$data->{'build.variant'}) {
+    $data->{'build.variant'} = $data->{'menu.PMOD.no.build.variant'};
+}
+
+if (!$data->{'build.variant'}) {
+    print "Error: unable to find variant for $source\n";
+    exit(10);
+}
+
+
 if ($data->{'usb.enabled'} eq "true") {
 
     $out->{'options.usb.name'} = "USB";
